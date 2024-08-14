@@ -1,15 +1,14 @@
 {
-  "name": "markdown-it-ins",
+  "name": "markdown-it-u",
   "version": "4.0.0",
-  "description": "<ins> tag for markdown-it markdown parser.",
+  "description": "<u> tag for markdown-it markdown parser.",
   "keywords": [
     "markdown-it-plugin",
     "markdown-it",
     "markdown",
-    "insert",
     "ins"
   ],
-  "repository": "markdown-it/markdown-it-ins",
+  "repository": "AndreyBelym/markdown-it-u",
   "license": "MIT",
   "main": "dist/index.cjs.js",
   "module": "index.mjs",

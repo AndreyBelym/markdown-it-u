@@ -64,15 +64,15 @@ export default function ins_plugin (md) {
       const endDelim = delimiters[startDelim.end]
 
       token         = state.tokens[startDelim.token]
-      token.type    = 'ins_open'
-      token.tag     = 'ins'
+      token.type    = 'u_open'
+      token.tag     = 'u'
       token.nesting = 1
       token.markup  = '++'
       token.content = ''
 
       token         = state.tokens[endDelim.token]
-      token.type    = 'ins_close'
-      token.tag     = 'ins'
+      token.type    = 'u_close'
+      token.tag     = 'u'
       token.nesting = -1
       token.markup  = '++'
       token.content = ''
@@ -93,7 +93,7 @@ export default function ins_plugin (md) {
       const i = loneMarkers.pop()
       let j = i + 1
 
-      while (j < state.tokens.length && state.tokens[j].type === 'ins_close') {
+      while (j < state.tokens.length && state.tokens[j].type === 'u_close') {
         j++
       }
 
@@ -107,8 +107,8 @@ export default function ins_plugin (md) {
     }
   }
 
-  md.inline.ruler.before('emphasis', 'ins', tokenize)
-  md.inline.ruler2.before('emphasis', 'ins', function (state) {
+  md.inline.ruler.before('emphasis', 'u', tokenize)
+  md.inline.ruler2.before('emphasis', 'u', function (state) {
     const tokens_meta = state.tokens_meta
     const max = (state.tokens_meta || []).length
 
