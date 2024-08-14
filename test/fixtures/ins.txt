@@ -1,32 +1,32 @@
 .
 ++Insert++
 .
-<p><ins>Insert</ins></p>
+<p><u>Insert</u></p>
 .
 
 
 .
 x ++++foo++ bar++
 .
-<p>x <ins><ins>foo</ins> bar</ins></p>
+<p>x <u><u>foo</u> bar</u></p>
 .
 
 .
 x ++foo ++bar++++
 .
-<p>x <ins>foo <ins>bar</ins></ins></p>
+<p>x <u>foo <u>bar</u></u></p>
 .
 
 .
 x ++++foo++++
 .
-<p>x <ins><ins>foo</ins></ins></p>
+<p>x <u><u>foo</u></u></p>
 .
 
 .
 x +++foo+++
 .
-<p>x +<ins>foo</ins>+</p>
+<p>x +<u>foo</u>+</p>
 .
 
 
@@ -37,7 +37,7 @@ Inserts have the same priority as emphases:
 ++**test++**
 .
 <p><strong>++test</strong>++</p>
-<p><ins>**test</ins>**</p>
+<p><u>**test</u>**</p>
 .
 
 
@@ -67,7 +67,7 @@ Nested inserts:
 .
 ++foo ++bar++ baz++
 .
-<p><ins>foo <ins>bar</ins> baz</ins></p>
+<p><u>foo <u>bar</u> baz</u></p>
 .
 
 
@@ -75,7 +75,7 @@ Nested inserts with emphasis:
 .
 ++f **o ++o b++ a** r++
 .
-<p><ins>f <strong>o <ins>o b</ins> a</strong> r</ins></p>
+<p><u>f <strong>o <u>o b</u> a</strong> r</u></p>
 .
 
 
@@ -114,8 +114,8 @@ x ++a ++foo+++++++++++bar++ b++
 
 x ++a ++foo++++++++++++bar++ b++
 .
-<p>x <ins>a <ins>foo</ins></ins>+++<ins><ins>bar</ins> b</ins></p>
-<p>x <ins>a <ins>foo</ins></ins>++++<ins><ins>bar</ins> b</ins></p>
+<p>x <u>a <u>foo</u></u>+++<u><u>bar</u> b</u></p>
+<p>x <u>a <u>foo</u></u>++++<u><u>bar</u> b</u></p>
 .
 
 
@@ -132,7 +132,7 @@ Should parse delimiters inside links:
 .
 [++foo++]()
 .
-<p><a href=""><ins>foo</ins></a></p>
+<p><a href=""><u>foo</u></a></p>
 .
 
 
@@ -140,5 +140,5 @@ Regression test for markdown-it/markdown-it#742:
 .
 -++++;++++++
 .
-<p>-<ins><ins>;</ins></ins>++</p>
+<p>-<u><u>;</u></u>++</p>
 .
